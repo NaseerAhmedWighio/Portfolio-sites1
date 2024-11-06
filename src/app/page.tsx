@@ -1,101 +1,129 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import Portrait from "./Public/Portrait.png";
+import { PiFacebookLogoBold } from "react-icons/pi";
+import { TiSocialLinkedinCircular } from "react-icons/ti";
+import { FaInstagram } from "react-icons/fa6";
+import { AiOutlineDiscord } from "react-icons/ai";
+import { TypeAnimation } from 'react-type-animation';
+import bg3 from "./Public/bg3.jpg";
 
-export default function Home() {
+const Hero = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main
+      className="w-full h-auto bg-cover bg-center mt-20 opacity-100"
+      style={{ backgroundImage: `url(${bg3.src})` }}
+    ><div className="-60">
+      <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-28">
+        {/* Text Section */}
+        <div id="info-text" className="flex flex-col items-center mb-10 lg:mb-0 lg:items-start">
+          <div className="text-2xl sm:text-lg md:text-lg xl:text-3xl mb-2 text-center"> <TypeAnimation
+            sequence={["Hi I'm", 1000, "Hi I am", 1000]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: '1em', display: 'inline-block' }}
+            repeat={Infinity}
+          />
+          </div>
+          <div className="text-3xl sm:text-2xl md:text-2xl xl:text-4xl font-bold mb-2 text-center"> <TypeAnimation
+            sequence={["Naseer Ahmed", 1000, "Naseer Ahmed Wighio", 1000]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: '1em', display: 'inline-block' }}
+            repeat={Infinity}
+          />
+          </div>
+          <div className="text-4xl sm:text-3xl md:text-5xl xl:text-6xl text-orange-600 font-bold mb-6 text-center"> <TypeAnimation
+            sequence={["UI/UX designer", 1000, "Web developer", 1000]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: '1em', display: 'inline-block' }}
+            repeat={Infinity}
+          />
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* Social Links */}
+          <div className="flex space-x-4 mb-6">
+            <Link href="https://www.linkedin.com/in/naseer-ahmed-wighio-a20453285/">
+              <TiSocialLinkedinCircular
+                title="LinkedIn"
+                className="w-8 h-8 sm:w-12 sm:h-12 hover:text-orange-600"
+              />
+            </Link>
+            <Link href="https://discord.com/">
+              <AiOutlineDiscord
+                title="Discord"
+                className="w-8 h-8 sm:w-12 sm:h-12 hover:text-orange-600"
+              />
+            </Link>
+            <Link href="https://www.facebook.com/naseer.ahmed.3993">
+              <PiFacebookLogoBold
+                title="Facebook"
+                className="w-8 h-8 sm:w-11 sm:h-11 hover:text-orange-600"
+              />
+            </Link>
+            <Link href="https://www.instagram.com/naseerahmedwighio/">
+              <FaInstagram
+                title="Instagram"
+                className="w-8 h-8 sm:w-10 sm:h-10 hover:text-orange-600"
+              />
+            </Link>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
+            <button
+              type="button"
+              className="text-xl font-bold py-3 px-6 sm:px-14 hover:bg-white hover:text-orange-600 bg-orange-600 rounded-lg"
+            >
+              Hire me
+            </button>
+            <a href="./Public/Resume.pdf" download>
+            <button
+              type="button"
+              className="text-xl font-bold py-3 px-6 sm:px-8 hover:bg-orange-600 hover:text-white border-2 border-orange-600 rounded-lg"
+            >
+              Download CV
+            </button></a>
+          </div>
+
+          {/* Experience Section */}
+          <div className="bg-[#1b1b1b] opacity-40 rounded-xl p-6 w-full lg:w-[550px] lg:h-48">
+            <div className="flex justify-between items-center space-x-5 ml-6 mr-6">
+              <div className="text-center">
+                <h1 className="text-yellow-500 text-3xl font-semibold">5+</h1>
+                <p className="text-xl">Experiences</p>
+              </div>
+              <div className="w-[0.5px] h-36 opacity-70 bg-white"></div>
+              <div className="text-center">
+                <h1 className="text-yellow-500 text-3xl font-semibold">20+</h1>
+                <p className="text-xl">Projects done</p>
+              </div>
+              <div className="w-[0.5px] h-36 opacity-70 bg-white"></div>
+              <div className="text-center">
+                <h1 className="text-yellow-500 text-3xl font-semibold">80+</h1>
+                <p className="text-xl">Happy Clients</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        {/* Image Section */}
+        <div className="mt-10 lg:mt-0 flex justify-center lg:justify-end w-full">
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={Portrait}
+            alt="Profile Picture"
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+            priority
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </div>
+      </div>
+    </main>
   );
 }
+
+export default Hero
